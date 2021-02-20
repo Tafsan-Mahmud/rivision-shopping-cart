@@ -82,6 +82,8 @@ document.getElementById('error').addEventListener('click', function(){
     const inputCase = document.getElementById('input-case');
     if(inputPhone.value < 1 && inputCase.value < 1 ){
         alert('please buy 1 item than check out ')
+        document.getElementById('modalHtml').innerHTML = '';  //its not working 
+
     }
     else{
         document.getElementById('modalHtml').innerHTML = ` <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
