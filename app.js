@@ -55,10 +55,12 @@ function calculate(){
     const parseIntCaseValue = parseInt(inputCase.value);
     const subTotal = parseIntPhoneValue * 1219 + parseIntCaseValue * 59 ;
     document.getElementById('subTotal').innerText = subTotal;
-    let totalTax = subTotal * 0.1;
-    totalTax = totalTax.toFixed(4)
-    document.getElementById('tax').innerText = totalTax;
-    const totalPrice = Math.round(subTotal + totalTax);
+    let taxForShow = subTotal * 0.1; 
+    taxForShow = taxForShow.toFixed(3)
+             //uporer ai line 2ta just tax er samne point(.) kichu dakhanor jonno  asol code niche realTax
+    const realTax =Math.round(subTotal * 0.1);
+    document.getElementById('tax').innerText = taxForShow;
+    const totalPrice = subTotal + realTax;
     document.getElementById('total').innerText = totalPrice;
 }
 
