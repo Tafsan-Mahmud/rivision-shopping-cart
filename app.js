@@ -1,10 +1,10 @@
 document.getElementById('plus-btn-phone').addEventListener('click', function () {
     daynamicPhoneInput('plus-phone');
-    console.log('clicked pluse')
+    // console.log('clicked pluse')
 });
 document.getElementById('minus-btn-phone').addEventListener('click', function () {
     daynamicPhoneInput('minus-phone');
-    console.log('clicked minus')
+    // console.log('clicked minus')
 });
 function daynamicPhoneInput(user) {
     const input = document.getElementById('input-phone');
@@ -55,9 +55,10 @@ function calculate(){
     const parseIntCaseValue = parseInt(inputCase.value);
     const subTotal = parseIntPhoneValue * 1219 + parseIntCaseValue * 59 ;
     document.getElementById('subTotal').innerText = subTotal;
-    const totalTax = Math.round(subTotal * 0.1);
+    let totalTax = subTotal * 0.1;
+    totalTax = totalTax.toFixed(4)
     document.getElementById('tax').innerText = totalTax;
-    const totalPrice = subTotal + totalTax;
+    const totalPrice = Math.round(subTotal + totalTax);
     document.getElementById('total').innerText = totalPrice;
 }
 
@@ -78,11 +79,11 @@ document.getElementById('cancel3').addEventListener('click',function(){
 })
 
 document.getElementById('error').addEventListener('click', function(){
-    const inputPhone = document.getElementById('input-phone');
-    const inputCase = document.getElementById('input-case');
-    if(inputPhone.value < 1 && inputCase.value < 1 ){
+    const inputPhone = document.getElementById('input-phone').value;
+    const inputCase = document.getElementById('input-case').value;
+    if(inputPhone < 1 && inputCase < 1 ){
         alert('please buy 1 item than check out ')
-        document.getElementById('modalHtml').innerHTML = '';  //its not working 
+        // document.getElementById('modalHtml').innerHTML = '';  //its not working 
 
     }
     else{
