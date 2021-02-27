@@ -57,7 +57,7 @@ function calculate(){
     document.getElementById('subTotal').innerText = subTotal;
     let taxForShow = subTotal * 0.1; 
     taxForShow = taxForShow.toFixed(3)
-             //uporer ai line 2ta just tax er samne point(.) kichu dakhanor jonno  asol code niche realTax
+         //uporer ai line 2ta just tax er samne point(.) kichu dakhanor jonno  asol code niche realTax
     const realTax =Math.round(subTotal * 0.1);
     document.getElementById('tax').innerText = taxForShow;
     const totalPrice = subTotal + realTax;
